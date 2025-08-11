@@ -9,11 +9,12 @@ def run():
 @app.route('/submit', methods=['POST'])
 def marks():
     number=int(request.form['Number'])
-    result = number ** 2
-    return render_template('home.html',Percentage=result)
+    Percentage = number ** 2
+    return render_template('home.html',Percentage=Percentage)
 
 if __name__=='__main__':
     app.run(debug=True)
+
 
 
 
