@@ -14,8 +14,9 @@ def marks():
     Hindi = int(request.form['Hindi'])
     English = int(request.form['English'])
     result = Physics + Maths + Chemistry + Hindi + English
-    Percentage = result/5
+    Percentage = result
     return render_template('home.html',Percentage=Percentage)
 
 if __name__=='__main__':
     app.run(debug=True)
+
