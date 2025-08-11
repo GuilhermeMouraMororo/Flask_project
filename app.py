@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,requeste
 
 app = Flask(__name__)
 
@@ -8,15 +8,11 @@ def run():
 
 @app.route('/submit', methods=['POST'])
 def marks():
-    Physics=int(request.form['Physics'])
-    Maths= int(request.form['Maths'])
-    Chemistry = int(request.form['Chemistry'])
-    Hindi = int(request.form['Hindi'])
-    English = int(request.form['English'])
-    result = Physics + Maths + Chemistry + Hindi + English
-    Percentage = result
-    return render_template('home.html',Percentage=Percentage)
+    number=int(request.form['Number'])
+    result = number ** 2
+    return render_template('home.html',Percentage=result)
 
 if __name__=='__main__':
     app.run(debug=True)
+
 
